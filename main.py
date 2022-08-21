@@ -1,3 +1,5 @@
+from algos import *
+
 def main():
     txt = input("select algo type: ")
     print(txt)
