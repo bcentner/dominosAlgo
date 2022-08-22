@@ -16,10 +16,10 @@ def greedy(dominos, start_num : int):
         for temp in hash[cur]:
             
             pass
+        
         if len(cur_li) > longest:
             longest = len(cur_li)
-
-
+            longest_li = cur_li
 
         pass
     
