@@ -5,22 +5,32 @@ def greedy(dominos, start_num : int):
     count = 0
     longest = 0
     longest_li = []
-    hash = buildHash(dominos)
+    real_hash = buildHash(dominos)
+    real_strts = list(real_hash[start_num])
 
     cur_li = []
 
-    while len(hash[start_num]):
-        cur = hash[start_num].pop(0)
+    while len(real_strts):
+        cur = real_strts.pop(0)
         cur_li.append(cur)
+        end = False
 
-        for temp in hash[cur]:
-            
-            pass
-        
+        # copy hash map and git rid of the current starter block
+        copy_hash = dict(real_hash)
+        copy_hash[start_num].pop(count)
+
+        while not end:
+            for my_dom in copy_hash[cur]:
+                if my_dom in copy_hash:
+                    # TODO: pop and assign new cur
+                    pass
+                pass
+
         if len(cur_li) > longest:
             longest = len(cur_li)
             longest_li = cur_li
 
+        count += 1
         pass
     
     pass
