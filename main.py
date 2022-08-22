@@ -26,7 +26,7 @@ def main():
         branchBound(all_dom, valid_starts)
     elif int(txt)==2:
         print("starting greedy...")
-        greedy(all_dom, valid_starts)
+        greedy(all_dom, strt)
 
 if __name__=='__main__':
     main()
