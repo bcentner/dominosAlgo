@@ -1,17 +1,19 @@
 # TODO: error checking on user input 
 
 
-def greedy():
+def greedy(dominos, starts):
+    count = 0
+    
     pass
 
-def branchBound():
+def branchBound(dominos, starts):
 
     longest = 0
     count = 0
     longest_li = []
-    cur = [valid_starts[0]]
-    for li_pair in valid_starts:
-        cur = [valid_starts[count]]
+    cur = [starts[0]]
+    for li_pair in starts:
+        cur = [starts[count]]
 
         # FIXME: need loop here
         
@@ -22,3 +24,20 @@ def branchBound():
 
         count += 1
         pass
+
+
+# helper functions
+def buildHash(dominos):
+    dom_hash = {}
+    for pair in dominos:
+        if pair[0] not in dom_hash:
+            dom_hash[pair[0]] = [pair[1]]
+        else:
+            dom_hash[pair[0]].append(pair[1])
+
+        if pair[1] not in dom_hash:
+            dom_hash[pair[1]] = [pair[0]]
+        else:
+            dom_hash[pair[1]].append(pair[0])
+
+    return dom_hash
